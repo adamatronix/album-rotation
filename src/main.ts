@@ -1,24 +1,15 @@
 import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import lacyVideo from './SteveLacy_ADAM.mp4'
+import { setupFloppy } from './floppy'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
+  <div class="main-wrapper">
+    <div class="stage"></div>
+    <video class="full-video" controlsList="nodownload noplaybackrate" autoplay playsInline muted loop>
+      <source src="${lacyVideo}" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   </div>
 `
+setupFloppy(document.querySelector<HTMLDivElement>(".stage"));
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
